@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+	
+	<head>
+		<title>Nabio Taluf</title>
+		<link rel = "shortcut icon" type = "image/png" href = "img/favicon.png">
+		<link href="Assets/reset_style.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+	    <link href="Assets/home.css" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <script src="lib/app.js"></script>
+		<script src="lib/database.js"></script>
+		<script src="lib/codes.js"></script>
+		<script src="lib/handlebars.js"></script>
+		<script src="Assets/home.js"></script>
+		<script src="lib2/app.js"></script>
+        <script src="lib2/database.js"></script>
+        <script src="lib2/fingerprint.js"></script>
+        <script src="lib2/ciendad.js"></script>
+        <script src="lib2/test.js"></script>
+	    <meta charset="utf-8">
+	    <meta name='viewport' content='width=device-width, initial-scale=1'>
+	</head>
+
+	<body>
+		<header>
+			<h1 class='titulo'>Nabio Taluf</h1>
+			<p class='infos'>
+				Estudante de Engenharia Mecânica INSPER <br>
+				21 anos <br>
+				nabio_taluf@gmail.com
+			</p>
+			<nav class='nav_icones'>
+				<a href='index.html' class='link'><i class="fa fa-home"></i></a>
+				<a href='https://www.linkedin.com'><i class="fa fa-linkedin"></i></a>
+				<a href='https://github.com'><i class="fa fa-github"></i></a>
+				<a href='NabioTaluf_CV.pdf' class='CV'><i class="fa fa-info"></i></a>
+			</nav>
+	    </header>
+	    <main>
+	    	<h1>Áreas de Interesse</h1>
+	    	<div id="myBtnContainer">
+		    	<button class="btn active" onClick="filterSelection('Tudo')">Tudo</button>
+		    	{{#each area as |areas index|}}
+        		<button class="btn" onClick="filterSelection('{{areas}}')">{{areas}}</button>
+      			{{/each}}
+			</div>
+			<div class='row'>
+				{{#each projeto as |projetos index|}}
+				<a href="projetos.html?projeto={{index}}"><div class="container">
+				<div class="overlay">{{projetos.nome}}</div><img src="{{projetos.img}}" alt="{{projetos.nome}}"class="imagem {{projetos.area}}"></div></a>
+				{{/each}}
+			</div>
+	    </main>
+	<script src="Assets/filtro.js"></script>
+	</body>
+</html>
